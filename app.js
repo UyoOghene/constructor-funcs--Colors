@@ -84,3 +84,71 @@ box.style.backgroundColor = blue.hex();
 box3.style.backgroundColor = blue.rgba();
 box2.style.backgroundColor = green.hex();
 box4.style.backgroundColor = yellow.hex();
+
+
+// Extends and superwords
+
+// class Cat {
+//     constructor (name, age){
+//         this.name = name;
+//         this.age = age;
+//     }
+//     eat(){
+//         return `${this.name} ate an apple`;
+//     }
+//     meow(){
+//         return `${this.name} meowed`;
+//     }
+// }
+// const james = new Cat('james', 8);
+// console.log(james.meow())
+
+// class dog {
+//     constructor (name, age){
+//         this.name = name;
+//         this.age = age;
+//     }
+//     eat(){
+//         return `${this.name} ate an apple`;
+//     }
+//     bark(){
+//         return `${this.name} woofed`;
+//     }
+// }
+// const peggy = new dog('peggy', 8);
+// console.log(peggy.bark())
+
+// using extends
+
+class pet {
+    constructor(name, age){
+        this.name = name;
+        this.age = age;
+    }
+        eat(){
+        return `${this.name} ate an apple`;
+    }
+
+}
+
+class cat extends pet{
+    constructor(name, age, livesleft, color){
+        super(name,age);
+        this.livesleft = livesleft;
+        this.color = color;
+    }
+    meow(){
+        return `${this.name} meowed`;
+    }
+}
+const quinn = new cat('quinn', 10, 9, 'red');
+console.log(quinn.eat());
+
+class dog extends pet{
+    bark(){
+        return `${this.name} woofed`;
+    }
+}
+
+const peggy = new dog('peggy', 8);
+console.log(peggy.bark());
